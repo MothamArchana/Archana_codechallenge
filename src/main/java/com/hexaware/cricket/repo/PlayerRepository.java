@@ -8,4 +8,5 @@ import com.hexaware.cricket.entity.Player;
 @Repository
 public interface PlayerRepository extends JpaRepository<Player, Integer> {
 
+    Player findByJerseyNumber(int jerseyNumber);
 }

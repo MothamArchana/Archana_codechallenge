@@ -55,4 +55,10 @@ public class PlayerController {
 		return service.deletePlayer(playerId);
 	}
 
+	@GetMapping("/jersey/{jerseyNumber}")
+	public Player getPlayerByJerseyNumber(@PathVariable int jerseyNumber) {
+
+		return service.getPlayerByJerseyNumber(jerseyNumber);
+	}
+
 }

@@ -63,5 +63,13 @@ public class PlayerServiceImpl implements IPlayerService {
 		repository.delete(player);
 		return "Player deleted with id " + playerId;
 	}
+    public Player getPlayerByJerseyNumber(int jerseyNumber) {
+
+        Player player = repository.findByJerseyNumber(jerseyNumber);
+        if (player == null) {
+            throw new PlayerNotFoundException("Player not found with jersey number " + jerseyNumber);
+        }
+        return player;
+    }
 
 }
